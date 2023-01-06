@@ -1,4 +1,4 @@
-# Servermaintaince
+# Server-maintenance
 McPe Plugin
 
 Minecraft Plugin to plan a Maintaince to edite your serverfiles! [Pocketmine-mp.phar, bin, etc.]
