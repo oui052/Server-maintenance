@@ -1,0 +1,22 @@
+name: ServerMaintaince
+version: 1.0.0
+main: _oui053\ServerMaintaince\Main
+api: 4.0.0
+permissions:
+  oui.servermaintaince:
+    default: op
+commands:
+  serverm_30_min:
+    description: Stops the Server in 30 minutes / Can be cancled
+    usage: /serverm_30_min 
+    aliases:
+    - serverm_w_a_30_min
+    permission: oui.servermaintaince
+    permission-message: "You do not have permission to use this maintaince command!"
+  serverm_stop:
+    description: Stops the Servermaintaince!
+    usage: /serverm_stop
+    aliases:
+    - serverm_stop
+    permission: oui.servermaintaince
+    permission-message: "You do not have permission to use this maintaince command!"
