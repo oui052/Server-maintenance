@@ -20,3 +20,4 @@ commands:
     - serverm_stop
     permission: oui.servermaintaince
     permission-message: "You do not have permission to use this maintaince command!"
+
