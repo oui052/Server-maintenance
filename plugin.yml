@@ -1,4 +1,4 @@
-name: Server-maintenance
+name: ServerMaintaince
 version: 1.0.0
 main: _oui053\ServerMaintaince\Main
 api: 4.0.0
@@ -20,4 +20,3 @@ commands:
     - serverm_stop
     permission: oui.servermaintaince
     permission-message: "You do not have permission to use this maintaince command!"
-

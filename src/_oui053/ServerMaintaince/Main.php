@@ -21,15 +21,18 @@ class Main extends PluginBase{
         if ($command->getName() == "serverm_30_min"){
 
             $tickspersecond = $this->getServer()->getTicksPerSecondAverage();
-            $this->getScheduler()->scheduleDelayedTask(new Task_1_min(), 29*60*$tickspersecond); //1min
-            $this->getScheduler()->scheduleDelayedTask(new Task_5_min(), 25*60*$tickspersecond); //10min
-            $this->getScheduler()->scheduleDelayedTask(new Task_10_min(), 20*60*$tickspersecond); //10min
-            $this->getScheduler()->scheduleDelayedTask(new Task_15_min(), 15*60*$tickspersecond); //15min
-            $this->getScheduler()->scheduleTask(new Task_30_min()); //30min
+            $this->getScheduler()->scheduleDelayedTask(new Task_1_min(), 29*60*$tickspersecond);    //1min
+            $this->getScheduler()->scheduleDelayedTask(new Task_5_min(), 25*60*$tickspersecond);    //10min
+            $this->getScheduler()->scheduleDelayedTask(new Task_10_min(), 20*60*$tickspersecond);   //10min
+            $this->getScheduler()->scheduleDelayedTask(new Task_15_min(), 15*60*$tickspersecond);   //15min
+            $this->getScheduler()->scheduleTask(new Task_30_min());                                 //30min
             return true;
         }
         if ($command->getName() == "serverm_stop"){
             $this->getScheduler()->cancelAllTasks();
+            foreach($this->getServer()->getWorldManager()->getWorlds() as $world){
+                $world->save();
+            }
             $this->getServer()->broadcastTitle("Maintaince interrupted!", "by " . TextFormat::DARK_RED . $sender->getName(), -1, -1, -1, Server::getInstance()->getOnlinePlayers());
             $this->getServer()->getLogger()->info("Maintaince interrupted! by " . TextFormat::DARK_RED . $sender->getName());
             return true;
